@@ -2,6 +2,53 @@
 
 You can use the [editor on GitHub](https://github.com/naomipoclava2021/pagina-web-con-README/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
 
+
+# Modulo Nro.3
+## Temas
+
+- Entrada  y Salida por consola
+- Variables de texto.   Leer/escribir textos.
+
+Clase  nro.2
+- Listas.
+- Colas.
+- Pilas.
+- Hash Map
+- Recursion
+
+## Listas:
+Las listas son un tipo de coleccion que hereda de la interface collection, son una estructura de datos que respeta el orden en el cual fueron agregados los elementos, tambien permiten registros repetidos.
+
+``` indice 1 indice 2 indice 3 indice 4```
+
+- El numero de elementos de la lista no suele estar fijado.
+- Se tiene un control absoluto y preciso del lugar en el que se quiere insertar.
+- Es posible acceder a sus elementos a traves de su indice
+- Maneja grandes volumenes de datos
+- List se encuentra en el paquete java.util
+- Algunas clases que implementa son:
+    - ArrayList
+    - LinkedList
+    - Stack
+    - Vector
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
 ### Markdown
