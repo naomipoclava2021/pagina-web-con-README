@@ -1,8 +1,3 @@
-## Welcome to GitHub Pages
-
-You can use the [editor on GitHub](https://github.com/naomipoclava2021/pagina-web-con-README/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
-
-
 # Modulo Nro.3
 >## Temas
 
@@ -150,6 +145,105 @@ La interfaz de cola se proporciona el paquete java.util e implementa la interfaz
 
 ![Cola](https://user-images.githubusercontent.com/95596561/169605578-a2679c3a-f5d5-4a1a-ad34-29f6b18586ca.png)
 
+## Colas: 
+
+- En un mundo real podemos encontrasr este ejemplo en las colas de un banco, etc.
+- En el caso de la cola en el banco, la primera persona en llegar es tambien la primera en irse (suponiendo una unica ventanilla) y en los documentos a imprimir, la impresora imprime segun el orden de llegada.
+- Las colas se pueden implementar utilizando una estructura estatica (arreglos), o una estructura dinamica (listas enlazada, vectores, etc).
+
+## Colas:
+>**Operaciones:**
+- add(e):  Insertar el elemento e al final de la cola
+- poll(): Elimina el elemento del frente de la cola y lo retorna. Si la cola esta vacia se produce un error.
+- peek(): Retorna el elemento del frente de la cola. Si la cola esta vacia se produce un error.
+- isEmpty(): Retorna verdadero si la cola esta vacia.
+- size(): Retorna la cantidad de elementos de la cola
+
+
+## Colas:
+>**Implementacion:**
+- Se crea una coleccion llamada cola de Queue
+    - **Queue**:  es una forma lineal especial, que solo permite la eliminacion en el extremo frontal de la lista, mientras que el extremo posterior de la operacion de insercion de la lista.
+- Con una implementacion de lista enlazadas(LinkedList):
+    - clase LinkedList implementa la interfaz de cola, por lo que puede usar listas enlazadas como un cola
+- Se define excepciones para las condiciones de error
+
+## Colas:
+>**Ejemplo:**
+
+```java
+public static void cola(){
+    Queue<Integer> cola = new LinkedList<>();
+    System.out.println("Agregando valores");
+    for(int i =0; i<5; i++){
+        cola.add(i);
+        System.out.println("Valor: "+ i);
+    }
+    System.out.println("\nTamaño Inicial de la cola: "+ cola.size());
+    System.out.println("\nRetirando valores");
+    while(cola.peek()!=null){
+        System.out.println("Valor: "+ cola.poll());
+        System.out.println("Tamaño actual de la cola: "+ cola.size());
+    }
+    System.out.println("Tamaño final de la cola: "+ cola.size());
+}
+
+public static void main(String [] args){
+    lista();
+    cola();
+}
+```
+
+## Pilas (stacks):
+La interfaz de pila se proporciona en el paquete java.util e implementa la interfaz de Coleccion.
+- Son un tipo especial de lista.
+- Es un tipo de dato abstracto(TDA)
+- La pila implementa LIFO(Last in, first out), es decir, utimo en entrar, primero en salir...
+
+![Pila](https://user-images.githubusercontent.com/95596561/169881280-04080b20-61b3-422e-9b8b-6620720d698e.png)
+
+## Pilas:
+- En el mundo real podemos encontrar este ejemplo al apilar platos en un punto, cuando queremos mover los platos uno por uno se comienza retirando el ultimo plato.
+- Las pilas se pueden implementar utilizado una estructura estatica(arreglos), o una estructura dinamica (listas enlazadas, vectores, etc).
+
+
+## Pilas:
+**Operaciones:**
+- push(e): Inserta el elemento e al tope de la pila.
+- pop(): Elimina el elemento del tope de la pila y lo retorna. Si la pila esta vacia se produce un error.
+- top(): Retorna el elemento del tope de la pila. Si la pila esta vacia se produce un error
+- isEmpty(): Retorna verdadero si la pila esta vacia.
+- size(): Retorna la cantidads de elementos de la pila
+
+## Pilas:
+**Implementacion:**
+- Se puede crear una pila de forma sencilla con la clase Stack que hereda de la clase Vector
+- Se define excepciones para las condiciones de error.
+
+## Pilas:
+**Ejemplo:**
+
+```java
+public static void pila(){
+    Stack<Integer> pila = new Stack();
+    System.out.println("Agregando valores");
+    for(int i =0;i<5; i++){
+        pila.push(i);
+        System.out.println("Valor: "+ i);
+    }
+    System.out.println("\nTamaño Inicial de la pila: "+ pila.size());
+    System.out.println("\nRetirando valores");
+    while(!pila.isEmpty()){
+        System.out.println("Valor: "+ pila.pop());
+        System.out.println("Tamaño actual de la pila: "+ pila.size());
+    }
+    System.out.println("Tamaño final de la pila: "+ pila.size());
+}
+```
+
+
+Gracias. 
+
 >Practica
 
 ***Este texto esta in italica***
@@ -168,6 +262,9 @@ La interfaz de cola se proporciona el paquete java.util e implementa la interfaz
 
 
 
+## Welcome to GitHub Pages
+
+You can use the [editor on GitHub](https://github.com/naomipoclava2021/pagina-web-con-README/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
 
 
 
