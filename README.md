@@ -1,266 +1,134 @@
 # Modulo Nro.3
->## Temas
-
-- Entrada  y Salida por consola
-- Variables de texto.   Leer/escribir textos.
-
-Clase  nro.2
-- Listas.
-- Colas.
+## Java
+>Temas:
+- Entrada y Salida por consola
+- Variables de texto. Leer/escribir textos.
 - Pilas.
-- Hash Map
-- Recursion
+- Colas.
+- Listas.
 
->## Listas:
-Las listas son un tipo de coleccion que hereda de la interface collection, son una estructura de datos que respeta el orden en el cual fueron agregados los elementos, tambien permiten registros repetidos.
+**Clase nro.3**
+- **Hash Map**
+- **Recursion**
 
-``` indice 1 indice 2 indice 3 indice 4```
+## HASHMAP
+Cuando vimos vectores y ArrayList aprendimos que los arrays y vectores son una coleccion ordenada de elementos en los cuales tenemos acceso a cada elemento que aloja el vector o ArrayList por medio de un indice de tipo entero(indice/elemento).
 
-- El numero de elementos de la lista no suele estar fijado.
-- Se tiene un control absoluto y preciso del lugar en el que se quiere insertar.
-- Es posible acceder a sus elementos a traves de su indice
-- Maneja grandes volumenes de datos
-- List se encuentra en el paquete java.util
-- Algunas clases que implementa son:
-    - ArrayList
-    - LinkedList
-    - Stack
-    - Vector
+Hashmap es una estructura de datos que sigue una idea muy parecida a la de **vectores** o **ArrayList** (indice/elemento) pero con la diferencia que Hashmap almacena dos items una Clave y un Valor y en este caso podemos acceder a cada valor por medio de la clave asociada.
 
-## Listas
->**Crear y declarar una lista**
-
-Hemos indicado que List es una interfaz y esta implementada por clases como:
-
-- ArrayList
-- Stack
-- Vector
-- LinkedList
-
-Por lo tanto, puede declarar y crear instancias de la lista de cualquiera de las siguientes maneras:
-
+## HASHMAP - ¿COMO CREAR?
 ```java
-    List linkedlist = new LinkedList();
-    List arraylist = new ArrayList();
-    List vec_list = new Vector();
-    List stack_list = new Stack();
-```
+public class Test{
+    public static void main(String[] args){
+        //TODO Auto-generated method stub
+        HashMap<String,String> hm= new HashMap<String,String>();
 
-el orden de los elementos cambiara dependiendo de la clase utilizada para crear una instancia de la lista.
-
-por ejemplo, para una lista con clase stack, el orden es Last In, First Out (LIFO).
-
-## Listas:
->**Metodos**
-
-- add()
-- addAll()
-- clear()
-- contains()
-- containsAll()
-- copyOf()
-- equals()
-- get()
-- hashCode()
-- indexOf()
-- isEmpty()
-- iterator
-- lastIndexOf()
-- lastIterator()
-- of()
-- remove()
-- removeAll()
-- replaceAll()
-- retainAll()
-- set()
-- size()
-- sort()
-- spliterator()
-- subList()
-- toArray()
-
-## Listas:
-
->**Ejemplo**
-
-```java
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-
-Class fichero{
-    public static void main(String[] args) throws Exception{
-        List<String> list = new ArrayList<String>();
-        // Añadimos elementos
-        list.add("Luis");
-        list.add("Marta");
-        list.add("Julio");
-
-        // Obtenemos un Iterador y recorremos la lista.
-        // Iterador<String> lista = new list.iterator();
-        Iterator<String> iter = new list.iterator();
-        while(iter.hasNext()){
-            System.out.print(iter.next());
+        hm.put("1","Argentina");
+        hm.put("3","Chile");
+        hm.put("2","Bolivia");
+        
+        System.out.println(hm.get("2"));
+        hm.remove("3");
+        System.out.println(hm.size());
+        for(String i: hm.keySet()){
+            System.out.println(i);
         }
 
+        for(String valor: hm.values()){
+            System.out.println(valor);
+        }
+
+        for(String i: hm.keySet()){
+            System.out.println("Clave: "+ i+ " Valor: "+ hm.get(i));
+        }
+
+        hm.clear();
     }
 }
 ```
 
 
-Definimos un ArrayList de tipo String.
+## RECURSION - CONCEPTO
 
-Agregamos datos a la lista con add().
+La recursividad es una tecnica de programacion que permite diseñar algoritmo que dan soluciones elegantes y simples.
 
-Iterator es un objeto que nos permite recorrer una lista y presentar por pantalla todos sus elementos. Dispone de dos metodos claves para realizar esta operacion hasNext()y next().
+Es una tecnica por la cual un algoritmo se invoca a si mismo para resolver una version mas pequeña del problema original para el cual fue diseñado.
 
-## Listas:
->**Diferencias entre listas y arrays**
+## RECURSION - DISEÑO
+- El diseño de una solucion recursiva para un problema P consta fundamentalmente de los siguientes pasos:
+- Plantear P de forma que pueda ser descompuesto en k subproblemas (P1,P2,...Pk) de la misma naturaleza que el problema original.
+- Determinar el **Caso base(condicion de parada o terminacion**: es una condicion que no produce auto invocacion.
+- **Llamada recursiva**: es la invocacion del algoritmo a si mismo.
 
-| Arrays        | Listas        |
-| ------------- | ------------- |
-| Escrituras de datos para almacenar una secuencia de valores, No redimensionable.  | estructura de datos para almacenar una secuencia de valores , que Es redimencionable. |
-| Serie de variables consecutivas en memoria.  | Se guardan en memoria de manera dinamica.  |
-| Se debe  especificar su tamaño.| No es necesario definir su tamaño.
-|Se debe definir el tipo de datos que manejara. | Puede almacenar distintos tipos de datos (no recomendado).
-|Se maneja con indice. | Se maneja con puntero.|
-|No se puede agregar o eliminar elementos | Se puede agregar y eliminar elementos.
-
-## Temas:
-- Entrada y Salidas por consola
-- Variable de textos. Leer/ escribir textos.
->**Clase nro.2**
-- Listas.
-- **Colas**
-- **Pilas**
-- Hah Map
-- Recursion
-
-## Colas:
-La interfaz de cola se proporciona el paquete java.util e implementa la interfaz de Coleccion.
-
-- Son un tipo especial de listas
-- Es un tipo de dato abstracto(TDA)
-- La cola implementa FIFO(firts in, first out), es decir, primero en entrar, primero en salir..
-
-![Cola](https://user-images.githubusercontent.com/95596561/169605578-a2679c3a-f5d5-4a1a-ad34-29f6b18586ca.png)
-
-## Colas: 
-
-- En un mundo real podemos encontrasr este ejemplo en las colas de un banco, etc.
-- En el caso de la cola en el banco, la primera persona en llegar es tambien la primera en irse (suponiendo una unica ventanilla) y en los documentos a imprimir, la impresora imprime segun el orden de llegada.
-- Las colas se pueden implementar utilizando una estructura estatica (arreglos), o una estructura dinamica (listas enlazada, vectores, etc).
-
-## Colas:
->**Operaciones:**
-- add(e):  Insertar el elemento e al final de la cola
-- poll(): Elimina el elemento del frente de la cola y lo retorna. Si la cola esta vacia se produce un error.
-- peek(): Retorna el elemento del frente de la cola. Si la cola esta vacia se produce un error.
-- isEmpty(): Retorna verdadero si la cola esta vacia.
-- size(): Retorna la cantidad de elementos de la cola
+Nota: el valor de los parametros cambiara en cada llamada, volviendolo un caso mas sencillo que el anterior y aproximadamente en cada llamado al caso base.
 
 
-## Colas:
->**Implementacion:**
-- Se crea una coleccion llamada cola de Queue
-    - **Queue**:  es una forma lineal especial, que solo permite la eliminacion en el extremo frontal de la lista, mientras que el extremo posterior de la operacion de insercion de la lista.
-- Con una implementacion de lista enlazadas(LinkedList):
-    - clase LinkedList implementa la interfaz de cola, por lo que puede usar listas enlazadas como un cola
-- Se define excepciones para las condiciones de error
+## RECURSION - DISEÑO
+Para determinar si un algoritmo recursivo esta bien diseñado, se puede utilizar el metodo de las 3 preguntas:
 
-## Colas:
->**Ejemplo:**
+
+1. ¿Existe una salida no recursiva o caso base, y esta funciona correctamente para ella?
+2. ¿Cada llamada recursiva se refiere a un caso mas pequeño del problema original?
+3. Suponiendo que 1 y 2 se cumplen, ¿Funciona correctamente en todo el proceso?
+
+![Recursion](https://user-images.githubusercontent.com/95596561/169908888-94c0edd6-53d3-45d2-a806-b460f7a4a2b2.png)
+
+![Recursion](https://user-images.githubusercontent.com/95596561/169908981-802d796d-be24-4855-8390-1a68578c4a16.png)
+
+2. CASO BASE: n=0 (litas sin elementos).
+3. LLAMADA RECURSIVA: supongamos que nuestro algoritmo lo vamos a llamar sumarLista este modulo recibira como parametros la lista y su longitud. De acuerdo a como se planteo la division en subproblemas de P vemos que vamso reduciendo en 1 la lista quitando siempre el ultimo elemento, es decir en cada subproblema lo vamos "perdiendo" pero antes de perderlo deberiamos acumularlo ya que queremos sumar todos los elementos de la lista. Entoces la llamada recursiva queda: ultimoElemento + RestoLista.
+
+## RECURSION - CODIGO JAVA
+```java
+public int sumarLista(int lista, int n){
+    if(t==0){
+        return 0;
+    }else return lista[n-1]+ sumarLista(lista, n-1);
+}
+```
+
+## RECURSION - TRAZA
+Para comprender mejor el funcionamiento de un algoritmo recursivo es fundamental conocer como funciona la pila de llamadas de un programa en ejecucion.
+
+Todo programa en ejecucion tiene una pila asociada para este proposito. En los lenguajes de alto nivel (como C o Java) la gestion de la pila de llamadas la realiza de forma automatica el compilador, por lo tanto, el programa no necesita preocuparse de su correcto funcionamiento.
+
+Cuando en un punto del programa se llama a una funcion (recursiva o no) se reserva un espacio en la pila para la siguiente informacion:
+
+- Direccion de retorno de la funcion
+- Parametros de la llamda
+- Espacion para las variables locales
+- Resuelto devuelto
+
+## RECURSION - TRAZA
+Ahora que sabemos como se funciona un programa en ejecucion pasemos a un ejemplo de la ejecucion de un algoritmo recursivo.
+
+Supongamos un programa que calcula la factorial de un numero n. Sabemos que la de matematica el factorial se define como n!=n(n-1), esta definicion traducida a codigo Java:
 
 ```java
-public static void cola(){
-    Queue<Integer> cola = new LinkedList<>();
-    System.out.println("Agregando valores");
-    for(int i =0; i<5; i++){
-        cola.add(i);
-        System.out.println("Valor: "+ i);
+public static int factorial(n){
+    if(n==0){
+        return 1;
+    }else{
+        return n*factorial(n-1)
     }
-    System.out.println("\nTamaño Inicial de la cola: "+ cola.size());
-    System.out.println("\nRetirando valores");
-    while(cola.peek()!=null){
-        System.out.println("Valor: "+ cola.poll());
-        System.out.println("Tamaño actual de la cola: "+ cola.size());
-    }
-    System.out.println("Tamaño final de la cola: "+ cola.size());
-}
-
-public static void main(String [] args){
-    lista();
-    cola();
 }
 ```
 
-## Pilas (stacks):
-La interfaz de pila se proporciona en el paquete java.util e implementa la interfaz de Coleccion.
-- Son un tipo especial de lista.
-- Es un tipo de dato abstracto(TDA)
-- La pila implementa LIFO(Last in, first out), es decir, utimo en entrar, primero en salir...
+Si asignamos a n el valor 4
 
-![Pila](https://user-images.githubusercontent.com/95596561/169881280-04080b20-61b3-422e-9b8b-6620720d698e.png)
+1. Dentro de factorial, cada llamada return n*factorial(n-1); genera una nueva zona de memoria en la pila, siedo n-1 el correspondiente parametro actual para esta zona de memoria. En cada llamada tambien queda pendiente la evaluacion de la ejecucion de la expresion y la ejecucion de return.
+2. El proceso 1 se repite hasta que la condicion del caso base  se hace verdadera. Se ejecuta return 1 y empieza la vuelta hacia atras de la recursion. Se evaluan las expresiones y se ejecutan los return pendientes.
 
-## Pilas:
-- En el mundo real podemos encontrar este ejemplo al apilar platos en un punto, cuando queremos mover los platos uno por uno se comienza retirando el ultimo plato.
-- Las pilas se pueden implementar utilizado una estructura estatica(arreglos), o una estructura dinamica (listas enlazadas, vectores, etc).
+![factorial](https://user-images.githubusercontent.com/95596561/169915111-2bde7d78-3f9a-4222-9ec8-59ce1300a26b.png)
 
-
-## Pilas:
-**Operaciones:**
-- push(e): Inserta el elemento e al tope de la pila.
-- pop(): Elimina el elemento del tope de la pila y lo retorna. Si la pila esta vacia se produce un error.
-- top(): Retorna el elemento del tope de la pila. Si la pila esta vacia se produce un error
-- isEmpty(): Retorna verdadero si la pila esta vacia.
-- size(): Retorna la cantidads de elementos de la pila
-
-## Pilas:
-**Implementacion:**
-- Se puede crear una pila de forma sencilla con la clase Stack que hereda de la clase Vector
-- Se define excepciones para las condiciones de error.
-
-## Pilas:
-**Ejemplo:**
-
-```java
-public static void pila(){
-    Stack<Integer> pila = new Stack();
-    System.out.println("Agregando valores");
-    for(int i =0;i<5; i++){
-        pila.push(i);
-        System.out.println("Valor: "+ i);
-    }
-    System.out.println("\nTamaño Inicial de la pila: "+ pila.size());
-    System.out.println("\nRetirando valores");
-    while(!pila.isEmpty()){
-        System.out.println("Valor: "+ pila.pop());
-        System.out.println("Tamaño actual de la pila: "+ pila.size());
-    }
-    System.out.println("Tamaño final de la pila: "+ pila.size());
-}
-```
+## RECURSION
+**¿Por que escribir algoritmos recursivos?**
+- Generalmente son mas faciles de analizar
+- Se adaptan mejor a las estructuras de datos cuya naturaleza es recursiva
+- Ofrecen soluciones estructuradas, modulares y elegantemente simples
 
 
-Gracias. 
-
->Practica
-
-***Este texto esta in italica***
-~~tachada~~
-`hola` este un boque de codigo
-
->## ***El codigo de esta pagina esta*** [GitHub](https://github.com/naomipoclava2021/pagina-web-con-README)
-
-![Imagen](https://docs.github.com/assets/cb-319648/images/help/writing/image-rendered.png)
-
-
-
-
-
-
-
-
+gracias
 
 ## Welcome to GitHub Pages
 
