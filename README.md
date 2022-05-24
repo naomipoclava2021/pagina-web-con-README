@@ -1,177 +1,139 @@
-# Modulo Nro.3
-## Java
->Temas:
-- Entrada y Salida por consola
-- Variables de texto. Leer/escribir textos.
-- Pilas.
-- Colas.
-- Listas.
+# Bases de Datos con Java - Teoria Clase 1
 
-**Clase nro.3**
-- **Hash Map**
-- **Recursion**
+> Que vamos a ver?
 
-## HASHMAP
-Cuando vimos vectores y ArrayList aprendimos que los arrays y vectores son una coleccion ordenada de elementos en los cuales tenemos acceso a cada elemento que aloja el vector o ArrayList por medio de un indice de tipo entero(indice/elemento).
-
-Hashmap es una estructura de datos que sigue una idea muy parecida a la de **vectores** o **ArrayList** (indice/elemento) pero con la diferencia que Hashmap almacena dos items una Clave y un Valor y en este caso podemos acceder a cada valor por medio de la clave asociada.
-
-## HASHMAP - ¿COMO CREAR?
-```java
-public class Test{
-    public static void main(String[] args){
-        //TODO Auto-generated method stub
-        HashMap<String,String> hm= new HashMap<String,String>();
-
-        hm.put("1","Argentina");
-        hm.put("3","Chile");
-        hm.put("2","Bolivia");
-        
-        System.out.println(hm.get("2"));
-        hm.remove("3");
-        System.out.println(hm.size());
-        for(String i: hm.keySet()){
-            System.out.println(i);
-        }
-
-        for(String valor: hm.values()){
-            System.out.println(valor);
-        }
-
-        for(String i: hm.keySet()){
-            System.out.println("Clave: "+ i+ " Valor: "+ hm.get(i));
-        }
-
-        hm.clear();
-    }
-}
-```
+- 1° Clase Teorica:
+    - Teoria General de Bases de Datos - Modelo Relacional - Analisis y Diseño de Bases de Datos
+- 1° Clase Practica:
+    - Instalar Mysql y crear tablas de bdd.
+- 2° Clase Teorica:
+    - Teoria de BDD con Java
+- 2° Clase Practica:
+    - Consumir BDD desde Java con consultas.
 
 
-## RECURSION - CONCEPTO
+> Teoria General de Bases de Datos
+**¿Que son las Bases de Datos?**
 
-La recursividad es una tecnica de programacion que permite diseñar algoritmo que dan soluciones elegantes y simples.
+Existen muchas definiciones  entre las cuales podemos encontrar que:
 
-Es una tecnica por la cual un algoritmo se invoca a si mismo para resolver una version mas pequeña del problema original para el cual fue diseñado.
+- Es una **recopilacion organizada de informacion** o datos estructurados normalmente se almacena de forma electronica en un sistema informatico.
 
-## RECURSION - DISEÑO
-- El diseño de una solucion recursiva para un problema P consta fundamentalmente de los siguientes pasos:
-- Plantear P de forma que pueda ser descompuesto en k subproblemas (P1,P2,...Pk) de la misma naturaleza que el problema original.
-- Determinar el **Caso base(condicion de parada o terminacion**: es una condicion que no produce auto invocacion.
-- **Llamada recursiva**: es la invocacion del algoritmo a si mismo.
+- Es un **conjunto de datos relacionados** entre si.
 
-Nota: el valor de los parametros cambiara en cada llamada, volviendolo un caso mas sencillo que el anterior y aproximadamente en cada llamado al caso base.
+- Es una **herramienta para organizar** y recopilar informacion.
 
+- Una base de datos hace referencia al conjunto de datos o informaciones determinadas que se pueden **consultar de manera agil**, y segmentando las caracteristicas que se quieran destacar para concretar mas informacion que se pretende revisar.
 
-## RECURSION - DISEÑO
-Para determinar si un algoritmo recursivo esta bien diseñado, se puede utilizar el metodo de las 3 preguntas:
+- **Representa** alguna porcion del **mundo real.**
 
+> Teoria General de Bases de Datos
+Una definicion mas completa:
+- Una **coleccion de datos** integrados, con redundacia controlada y con una estructura que refleja las **interrelaciones** y restricciones semantica existentes en el mundo real; los datos, que han de ser **compartidos** por diferentes usuarios y aplicaciones, deben mantenerse independientes de esta y su definicion y descripcion, unicas para cada tipo de datos, han de estar **almacenadas** con los mismos. Los procesos de actualizacion y recuperacion, comunes y bien determinados habran de ser capaces de **conservar** la integridad, seguridad y confidencialidad del conjunto de datos.
 
-1. ¿Existe una salida no recursiva o caso base, y esta funciona correctamente para ella?
-2. ¿Cada llamada recursiva se refiere a un caso mas pequeño del problema original?
-3. Suponiendo que 1 y 2 se cumplen, ¿Funciona correctamente en todo el proceso?
+> Teoria General de Bases de Datos
+Un sistema de Base de Datos esta formado por:
 
-![Recursion](https://user-images.githubusercontent.com/95596561/169908888-94c0edd6-53d3-45d2-a806-b460f7a4a2b2.png)
+## HARDWARE
+El hardware es el conjunto de **dispositivos fisicos** sobre los que reside la BDD, Consiste en una o mas computadoras, unidades de discos, monitores, impresoras, unidades de almacenamiento, cableado y otros equipos auxiliares.
 
-![Recursion](https://user-images.githubusercontent.com/95596561/169908981-802d796d-be24-4855-8390-1a68578c4a16.png)
+## SOFTWARE
 
-2. CASO BASE: n=0 (litas sin elementos).
-3. LLAMADA RECURSIVA: supongamos que nuestro algoritmo lo vamos a llamar sumarLista este modulo recibira como parametros la lista y su longitud. De acuerdo a como se planteo la division en subproblemas de P vemos que vamso reduciendo en 1 la lista quitando siempre el ultimo elemento, es decir en cada subproblema lo vamos "perdiendo" pero antes de perderlo deberiamos acumularlo ya que queremos sumar todos los elementos de la lista. Entoces la llamada recursiva queda: ultimoElemento + RestoLista.
+Incluye distintos tipos de software:
+- El **Sistema de Gestion de Bases de Datos(SGBD)**
+- El sofware para la aplicacion, que usa las facilidades del SGBD para **manipular** la BDD.
+- Herramientas para el **desarrollo** de aplicaciones.
 
-## RECURSION - CODIGO JAVA
-```java
-public int sumarLista(int lista, int n){
-    if(t==0){
-        return 0;
-    }else return lista[n-1]+ sumarLista(lista, n-1);
-}
-```
-
-## RECURSION - TRAZA
-Para comprender mejor el funcionamiento de un algoritmo recursivo es fundamental conocer como funciona la pila de llamadas de un programa en ejecucion.
-
-Todo programa en ejecucion tiene una pila asociada para este proposito. En los lenguajes de alto nivel (como C o Java) la gestion de la pila de llamadas la realiza de forma automatica el compilador, por lo tanto, el programa no necesita preocuparse de su correcto funcionamiento.
-
-Cuando en un punto del programa se llama a una funcion (recursiva o no) se reserva un espacio en la pila para la siguiente informacion:
-
-- Direccion de retorno de la funcion
-- Parametros de la llamda
-- Espacion para las variables locales
-- Resuelto devuelto
-
-## RECURSION - TRAZA
-Ahora que sabemos como se funciona un programa en ejecucion pasemos a un ejemplo de la ejecucion de un algoritmo recursivo.
-
-Supongamos un programa que calcula la factorial de un numero n. Sabemos que la de matematica el factorial se define como n!=n(n-1), esta definicion traducida a codigo Java:
-
-```java
-public static int factorial(n){
-    if(n==0){
-        return 1;
-    }else{
-        return n*factorial(n-1)
-    }
-}
-```
-
-Si asignamos a n el valor 4
-
-1. Dentro de factorial, cada llamada return n*factorial(n-1); genera una nueva zona de memoria en la pila, siedo n-1 el correspondiente parametro actual para esta zona de memoria. En cada llamada tambien queda pendiente la evaluacion de la ejecucion de la expresion y la ejecucion de return.
-2. El proceso 1 se repite hasta que la condicion del caso base  se hace verdadera. Se ejecuta return 1 y empieza la vuelta hacia atras de la recursion. Se evaluan las expresiones y se ejecutan los return pendientes.
-
-![factorial](https://user-images.githubusercontent.com/95596561/169915111-2bde7d78-3f9a-4222-9ec8-59ce1300a26b.png)
-
-## RECURSION
-**¿Por que escribir algoritmos recursivos?**
-- Generalmente son mas faciles de analizar
-- Se adaptan mejor a las estructuras de datos cuya naturaleza es recursiva
-- Ofrecen soluciones estructuradas, modulares y elegantemente simples
+## DATOS
+- Son el objetivo principal, y por lo tanto **ningun** sistema de BDD **debe** (diferente de puede, ojo!) existir sin los datos.
+- Estos datos **deben ser** cuidadosa y logicamente **estructurados**.
+- Base sobre la que se fundamenta las necesidades de informacion y de procesamiento de una empresa.
 
 
-gracias
-
-## Welcome to GitHub Pages
-
-You can use the [editor on GitHub](https://github.com/naomipoclava2021/pagina-web-con-README/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+## PERSONAL
+- **Usuarios Informaticos:** Persona cuya mision esta en el diseño y del mantenimiento del sistema de BDD y su paquete de programas de aplicacion asociado.
+- **Usuarios No informaticos:** Personas que necesitan la informacion de la BDD para desarrollar su trabajo en el negocio.
 
 
+> Teoria General de Bases de Datos
+
+| VENTAJAS | DESVENTAJA |
+| --- | --- |
+| Permiten encontrar informacion con **mayor rapidez** .Esto colocando una palabra clave (o incluso solo una parte de esta) e iniciando una busqueda que, **dependiendo del tamaño** de la base de, suele ser muy veloz.| Puede ser **vulnerables o susceptibles a ataques externos**, por ejemplo, por parte de un hacker (Por eso es importante tener un respaldo e invertir en seguridad informatica).|
+| **Ahorro de espacio fisico**, al no tener que guardar achivos o papeles en el almacen u oficina. | Si el sistema falla, se genera un **efecto en cadena** que puede paralizar muchos procesos importantes de la empresa. |
+Permiten **compartir** datos de manera rapida con quien sea requerido.| Se requiere de **mucha capacidad** en el disco duro y de memoria RAM para funcionar de forma eficiente. |
+Permite ingresar una cantidad practicamente ilimitada de datos (la limitacion la da el hardware). | Su instalcion puede exigir un elevado coste (licencias). |
+Es posible **trabajar con los datos** en funcion a lo que requiere el analista, seleccionando rapidamente los datos que comparten caracteristica. Por ejemplo, extrayendo aquellas informacion que pertenece al mismo cliente.| Se debe contratar a un especialista para su mantenimiento. 
+
+## Teoria General de Bases de Datos
+Elementos que encontramos en una BDD
+
+>Entidades
+
+Se define una entidad (o instancia) como una **unidad** de una base de datos que **contiene informacion**. Esta unidad es una representacion detro de la base de datos de un objeto, persona, empresa...etc, del mundo real, y con tal **posee ciertos atributos que la diferencian del resto de entidades**
+
+Estas entidades como la conocemos ahora, van a representar un tabla en nuestra BBDD, luego nos va a interesar **recopilar datos acerca de estas entidades** y es un proceso de algo de practica poder identificarlas en una organizacion o empresa.
+
+![atributos](https://user-images.githubusercontent.com/95596561/170130228-f13ca973-5703-4d3b-ac69-4d6ed91d2cbb.png)
 
 
+## Teoria General de Basesd de Datos
+Elementosa que encotramos en una BDD
+>Atributos
+
+Los atributos **definen o identifican las caracteristicas de entidad** (**es el contenido de esta entidad**). Cada entidad contiene distintos atributos, que dan **informacion sobre esta entidad**. Estos atributos puenden ser de distintos tipos (numericos, texto, fecha...).
+
+![atributos](https://user-images.githubusercontent.com/95596561/170131570-072f3752-a689-481c-a361-e6c176bdaf95.png)
 
 
+## Teoria General de Bases de Datos
+>EL MODELO RELACIONAL
+- El modelo Relacional es un modelo muy simple y con solidos fundamentos matematicos, basada en la **teoria de conjuntos**. Fue diseñado por E.F Codd en 1970
+- Codd argumento que los datos **deberian relacionarse mediante interrelaciones** naturales,logicas, inherentes a los datos.
+- Codd propuso un modelo simple de datos en el que todos ellos **se representaron en tablas constituidassd por filas y columnas.**
+
+>Relacion
+- Las **relaciones** de **base de datos** son **asociaciones entre tablas** que se crean utilizando sentencias de union para recuperar datos.
+- Una relacion **Es un vinculo** entre entidades.
+
+![relacion](https://user-images.githubusercontent.com/95596561/170133071-a173ccf9-3641-43a3-84a7-42f4f42b5ad8.png)
 
 
+## Teoria General de Bases de Datos
+Entoces ahora todas las relaciones son lo mismo? Nop, Gracias a la Cardinalidasd.
+> Cardinalidad
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Define la **cantidad** de entidades en un conjunto de entidades, que pueden asociarse con el **numero de entidades** de otro conjunto a traves del conjunto de relaciones.
 
-### Markdown
+![cardinalidad](https://user-images.githubusercontent.com/95596561/170134114-d1ec1795-1878-4c7a-b35c-cf747ad086a0.png)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Teoria General de Base de Datos
 
-```markdown
-Syntax highlighted code block
+- En informatica, o concretamente en el contexto de una base de datos realacional, un **registro** (tambien llamado **fila** o **tupla**) **representa un objeto unico de datos** implicitamente estructurados en una tabla. **No puede haber un registro duplicado**, los datos deben ser diferentes en al menos uno de los campos.
+- Un registro es un conjunto de campos que **contienen los datos que pertencen a una misma entidad**. Se le asigna automaticamente un numero consecutivo (numero de registro) que en ocasiones es usado como indice auque lo normal y practico es asignarle a cada registro un campo clave para su busqueda.
+- **Es cada una de las filas de una relacion o tabla**
 
-# Header 1
-## Header 2
-### Header 3
 
-- Bulleted
-- List
+![Tabla](https://user-images.githubusercontent.com/95596561/170135700-15fe62c1-c431-4061-a931-1c75a976b634.png)
 
-1. Numbered
-2. List
 
-**Bold** and _Italic_ and `Code` text
+## Teoria General de Bases de Datos
+**CARACTERISTICAS** QUE DEBE TENER UNA TABLA EN EL **MODELO RELACIONAL**
 
-[Link](url) and ![Image](src)
-```
+- Cada tabla debe contener un solo tipo de filas. Es decir, todas las filas tienen las mismas columnas y formato.
+- Cada fila tienen que ser unica, no pueden haber filas duplicadas.
+- El orden de las filas de las tablas es indiferente.
+- Cada columna debe estar identificado por un nombre especificado.
+- El orden de las columnad dentro de una tabla es indiferente.
+- Cada columna debe extrear sus valores de un dominio.
+- Un mismo domino podra servir para definir los valores de varias columnas diferentes,
+- El valor individual de la interseccion de cualquier fila y culumna sera un unico dato.
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+## Teoria General de Bases de Datos
+>DENTRO DE LA TUPLAS PODEMOS ENCONTRAR aLgunas cosas mas.
 
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/naomipoclava2021/pagina-web-con-README/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+- **VALOR NULO**:
+    - Es el valor de un atributo en una tupla si el atributo es inaplicable o su valor es desconocido. Por ejemplo puede existir un registro donde el valor de una columna no exista y queda como un valor nulo.
+- **CLAVE**
+    - Es un conjunto minimo de atributos que identifique univocamente a cada tupla en la relacion. Puede haber varias claves. Se Llama clave principal, a aquella que se selecciona como la clave de la relacion.
+- **CLAVE EXTERNA:**
