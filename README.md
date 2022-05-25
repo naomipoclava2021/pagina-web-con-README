@@ -137,3 +137,108 @@ Define la **cantidad** de entidades en un conjunto de entidades, que pueden asoc
 - **CLAVE**
     - Es un conjunto minimo de atributos que identifique univocamente a cada tupla en la relacion. Puede haber varias claves. Se Llama clave principal, a aquella que se selecciona como la clave de la relacion.
 - **CLAVE EXTERNA:**
+    - Es un atributo o conjunto de atributos en una relacion que es una clave en otra, o en la misma relacion.
+- **RESTRICCIONES:**
+    - Es una ragla que limita los valores de los datos contenidos en la  BDD.
+    - El Modelo Relacional de Codd incluye varias restricciones para verificar la validez de los datos.
+        - **Integridad de la Entidad:**
+            - El atributo que es clave de fila en una relacion no puede tener un valor nulo
+        - **Integridad Referencial:**
+            - El valor de una clave externa o es nulo o debe ser un valor real de una clave en otra relacion.
+        - **Dependencia Funcional:**
+            - Este concepto se refiere a que todos los valores de los atributos de un registro tienen que estar referenciados o tener una dependencia con el atributo seleccionado como clave primaria.
+
+## Teoria General de Base de Datos
+> SGBD (Sitema Gestor de Bases de Datos)
+
+"Un **conjunto coordinado de programas**, procedimiento, lenguaje, etc., que **suministra**, tanto a los usuarios no informaticos como a los analistas, programadores o al administrador de la BDD los **medios necesarios** para describir, recuperar y manipular los datos almacenados en la base, manteniendo su integridad, confidencialidad y seguridad"
+
+## Teoria General de Bases de Datos
+> **Funciones de un SGBD**
+
+> Funcion de **Descripcion o Definicion**
+
+ - Mediante esta funcion el administracion especificara los elementos que integran la B.D., su estructura, y las relaciones que existen entre ellos, las reglas de integridad semantica, asi como las caracteristicas de tipo fisico y las vistas logicas de los usuarios.
+- El diseñador utiliza esta funcion mediante el lenguaje de definicion o descripcion de datos (en adelante LDD), de tal forma que defina las tres estructuraas de datos (externa, logica global, e interna).
+
+> Funcion de **Manipulacion:**
+- Mediante ella se pueden realizar las operaciones de buscar, añadir, suprimir, y modificar los datos de la B.D., simpre segun las especificaciones y las normas de seguridad prevista por el administrador.
+- Esta funcion se realiza con el leguaje de manipulacion de datos (LMD) que facilita las tecnicas necesarias para la realizacion de estas actividades.
+
+> Funcion de **Utilizacion:**
+- Tambien llamad de control, reune toda la interfaz que utilizan los distintos usuarios, y proporciona al administrador un conjunto de procedimiento para mantener el control, la integridad, y la seguridad de la BD
+- Esta funcion se realiza con el lenguaje de control de datos (en adelante LCD)
+
+## Teoria General de Bases de Datos
+
+> Lenguajes
+
+**Lenguaje de descripcion de los datos(LDD)** mediante el cual se definiran y construiran las diferentes estructuras: logica global, externa, e internas
+**Lenguaje de manipulacion de datos(LMD)** que hara posible todas las operaciones de seleccion, borrando, modificacion, e insercion de datos. Pueden ser procedimentales, y de cuarta generacion
+**Lenguaje de control de datos(LCD)** con el cual se controlaran los temas referentes a seguridad y administracion de la base de datos.
+
+EL LENGUAJE SQL
+
+SQL (por sus siglas en ingles **Structured Query Language**; en español **lenguaje de consulta estructurada**) es un lenguaje de dominio especifico, diseñado para administrar, y recuperar informacion de sistema de gestion de bases de datos relacioneles. Una de sus principales caracteristicas es el manejo del algebra y el calculo relacional para efectuar consultas con el fin de recuperar, de forma sencilla, informacin de base de datos, asi como realizar cambios en ellas.
+
+
+## Teoria General de Base de Datos
+> EL LENGUAJE SQl comandos DDL
+
+
+|Comandos| Descripcion |
+|---|---|
+|CREATE| Utilizado para crear nuevas tablas, campos e indices|
+|DROP| Almacena texto en formato binario. Empleado para eliminar tablas e indices|
+|ALTER| Utilizado para modificar las tablas agregando campos o cambiando la definicion de campos.
+
+```sql
+CREATE TABLE clientes;
+ALTER TABLE alumnos ADD edad INT UNSIGNED;
+DROP TABLE alumnos;
+```
+
+## Teoria General de Bases de Datos
+>EL LENGUAJE SQL comando DML
+
+|Comandos| Descripcion|
+|---|---|
+|SELECT| Utilizado para consultar registros de la base de datos que sastifagan un criterio determinado|
+|INSERT| Utilizado para cargar lotes de datos en la base de datos en una unica operacion.|
+|UPDATE| Utilizado para modificar los valores de los campos y registros especificados|
+|DELETE| Utilizado para eliminar registros de una tabla de una base de datos|
+
+## Teoria General de Base de Datos
+> EL LENGUAJE SQL comando DML
+
+```SQL
+SELECT *
+FROM
+    coches
+ORDER BY
+    marca,
+    modelo;
+
+```
+
+```SQL
+INSERT INTO
+    tabla(columnaA, [columnaB, ...])
+    VALUES
+    ('valor1', ['valor2',...]);
+-- O tambien se puede utilizar como:
+INSERT INTO table VALUES ('valor1', 'valor2');
+```
+
+```SQL
+UPDATE My_table SET field1 = 'update value' WHERE fileD2= 'N';
+
+```
+
+
+```SQL
+DELETE FROM mi_table WHERE columna2='N';
+```
+
+
+
