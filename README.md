@@ -240,5 +240,111 @@ UPDATE My_table SET field1 = 'update value' WHERE fileD2= 'N';
 DELETE FROM mi_table WHERE columna2='N';
 ```
 
+## Teoria General de Base de Datos
+> EL LENGUAJE SQL clausulas y orden de uso.
+
+|Clausula| Descripcion|
+|---|---|
+|FROM| Utilizada para especificar la tabla de la cual se van seleccionar los registros.|
+|WHERE| Utilizada para especificar las condiciones que deben reunir los registros que se van a seleccionar.|
+|GROUP BY| Utilizada para separar los registros seleccionados en grupos especificos.|
+|HAVING| Utilizada para expresar la condicion que debe sastifacer cada grupo.|
+|ORDER BY| Utilizada para ordenar los registros seleccionados de acuerdo con un orden especifico.|
+
+## Teoria General de Base de Datos
+> EL LENGUAJE SQL clausulas y orden de uso.
+
+```SQL
+SELECT [{ALL| DISTINCT}]
+    <nombre_campo>[, <nombre_campo>...]
+
+FROM {<nombre_tabla>| <nombre_vista>}[,
+    {<nombre_tabla>| <nombre_vista>...}
+]
+
+[WHERE <condicion> [{AND|OR}<condicion>...]]
+[GROUP BY <nombre_campo>[,<nombre_campo>...]]
+[HAVING <condicion>[{AND|OR} <condicion>...]]
+[ORDER BY {<nombre_campo> | <indice_campo>} [{ASC|DESC}][,
+{<nombre_campo>|<indice_campo>}[{ASC|DESC}]]];
+```
+
+![SQL clausulas y orden de uso.](https://user-images.githubusercontent.com/95596561/170390178-d1f0b5f5-f727-45c0-b0fb-c2128a440741.png)
+
+
+## Teoria General de Bases de Datos
+> Resumiendo
+
+![resumiendo](https://user-images.githubusercontent.com/95596561/170390490-728258f1-2466-4933-8bf5-34ef4b852850.png)
+
+## Teoria General de Base de Datos
+### SGBD MySQL
+
+>**QUE ES MySQL?**
+
+- Es la **base de Datos de codigo abierto** mas popular del mundo con mas de 15 millones de instalaciones estimadas y decenas de miles de descargas al dia.
+- MySQL es usado por muchos sitios web grandes y populares, como Wikepedia, Google(aunque no para busquedas), Facebook, Twitter, Flickr, y YouTube.
+- Cuenta con el **rendimiento y la escalabilidad** para sastifacer las necesidades de las aplicaciones mas exigentes, como telecomunicaciones y seguridad.
+- **Es parte de la gama LAMP de codigo abierto** (Linux, Apache, MySQL, PHP/ Perl/ Python), que la utilizaron millones de personas y se distribuye con miles de aplicaciones diariamente.
+
+## Teoria General de Base de Datos
+
+> **Por que usar MySQL?**
+- MySQL ws la base de datos elegida para la ultima generacion de aplicaciones de base de datos que incluyen aplicaciones Web, de nube, SaaS. 9 de las 10 propiedades Web mas importante del mundo, como Facebook, Google y YouTube, confia en MySQL
+- **MySQL cuenta con Soporte de clase Mundial**
+    - Sorte de produccion global disponible en **29 idiomas, las 24 horas del dia, todos los dias**
+    - Soporte ilimitado de incidentes
+    - Base de conocimiento
+    - Actualizacion de version mayores y menores
+    - Correccion de errores y parches directos (que se integran y se mantienen en versiones posteriores de MySQL)
+    - Soporte consultivo de MySQL
+    - SaaS: Software como Servicio
+- **Alto rendimiento y escalabilidad**
+    - MySQL es conocida por su capacidad para ejecutarse y para escalar horizontalmente a traves de hardware de consumo. Esto la ha convertido en la base de datos elegida para la mayoria de las aplicaciones de rendimiento exigente y las propiedades Web mas grandes, como Facebook, que cuenta con miles de servidores MySQL y ha escalado a MySQL para administrar mas de mil millones de usuarios activos.
+
+## Teoria General de Base de Datos
+>**Por que usar MySQL**
+
+- **Reduccion de Costos por Licencia**
+    - La rentabilidad de MySQL se muestra claramente en los analisis cuantitativos. En una comparacion de los costos totales durante un periodo de tres años, MySQL es un **90% mas barato** que Microsoft SQL Server y Sybase ASE.
+- **Proteccion De Datos y Seguridad**
+    - Soporte para **transacciones:** el motor de almacenamiento para transacciones InnoDB garantiza la integridad de los datos y proporciona transacciones en cumplimiento con ACID.
+    - Respando en linea: MySQL Enterprise Backup realiza una copias de seguridad en linea o directas, sin bloqueo de sus bases de datos MySQL, restaurando sus datos de una manera segura a partir de una copia de seguridad completa.
+    - **Autenticacion externa:** MySQL Enterprise Security proporciona modulos de autenticacion externos listos para usar que se integran facilmente con otras infraestructuras de seguridad.
+    - **Auditoria:** MySQL Enterprise Audit ayuda a las organizaciones a implementar mayores controles de seguridad y satisfacer el cumplimiento normativo para producir una pista de auditoria de informacion, para saber quien hace que con cual parte de los datos.
+    - Reduccion de costos, tiempo y recursos.
+    - Mediante el uso de MySQL, los proveedores pueden dedicar **menos recursos a la base de datos de su producto y mas hacia la mejora y la diferenciacion de sus productos.**
+
+    ## Teoria General de Base de Datos
+    > Empresas que usan MySQL
+    Estas sos algunas de las empresas mas importante que unan MySQL como su SGBD.
+    - NASA
+    - Colgate
+    - Epson
+    - Toyota
+    - Yamaha
+    - New York Times
+    - Televisa
+    - Walmart
+    - Apple Inc.
+    - Cisco Systems
+    - Dell
+    - Intel
+    - Motorola
+    - AT&T
+    - Nextel
+    - Nokia
+    - DHL
+    - Amazon
+    - AOL
+    - eBay
+    - Google
+    - Yahoo!
+    - Tumblr
+    - Twitter
+    - Wikipedia
+    - YouTube
+    - Wordpress
+
 
 
