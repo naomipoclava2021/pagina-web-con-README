@@ -159,3 +159,4 @@ Ejemplo con **codigo** de los pasos utilizar JDBC:
 ![screenshot (9)](https://user-images.githubusercontent.com/95596561/172077109-bddb15eb-4e25-40cf-868c-267f2765c2ae.png)
 * Aqui vamos a crear un objeto Statement para poder **correr nuestras sentencias SQL**
 
+* Subiendo un cambio desde visual studio virtual
