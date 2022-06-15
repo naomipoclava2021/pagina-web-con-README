@@ -159,4 +159,112 @@ Ejemplo con **codigo** de los pasos utilizar JDBC:
 ![screenshot (9)](https://user-images.githubusercontent.com/95596561/172077109-bddb15eb-4e25-40cf-868c-267f2765c2ae.png)
 * Aqui vamos a crear un objeto Statement para poder **correr nuestras sentencias SQL**
 
-* Subiendo un cambio desde visual studio virtual
+![screenshot (11)](https://user-images.githubusercontent.com/95596561/173703595-b0b42100-c6e9-4755-9b3c-292cc497ad69.png)
+
+> Introduccion a JDBC
+
+* Cuando hecemos una consulta de tipo **SELECT**...esto nos retorna un Objeto del tipo **ResultSet** al cual le podemos **aplicar algunos metodos** para poder Obtener y luego Filtrar, Analizar, Mostrar, etc... los datos y convertilos asi en informacion para nuestros clientes.
+
+![screenshot (12)](https://user-images.githubusercontent.com/95596561/173704124-66d67469-9166-406a-be12-16363963fc3f.png)
+
+> Introduccion a JDBC
+
+* Finalmente vamos a **controlar las excepciones** por si suceden algunas cosas mientras estamos intentando conectarnos a la BDD, esto nos ayudara a mejorar la **calidad** de nuestro codigo y realizar **buenas practicas** a la hora de acceder a la BDD
+
+![screenshot (13)](https://user-images.githubusercontent.com/95596561/173704675-df400edf-7885-4469-b0cc-9b2b8ef62c03.png)
+
+> Introduccion a JDBC
+
+* El **Resultado** de nuetra consulta:
+
+![screenshot (14)](https://user-images.githubusercontent.com/95596561/173704931-431caeba-4cbf-4d2f-9005-a26d2fda10d4.png)
+
+* Observemos que formateamos la salida para obtener los registros de las columnas Name, Code, Population que se encuentran en la Tabla Contry.
+
+* Podrias determinar cuantas personas existen en el mundo segun esta BDD?
+
+> Introduccion a JDBC
+
+* vamos a crear una BBDD o un Shema **vacio** desde Mysql Worchbench y accederemos a ella para crear las tablas y añadir valores **desde JAVA**
+
+![screenshot (15)](https://user-images.githubusercontent.com/95596561/173705489-3a0ac36e-106d-47f5-be02-68fe451ee2d5.png)
+
+> Introduccion a JDBC
+
+Vamos a crear una base de datos llamada **auto_shop** y luego hacer click en el boton **Apply**
+
+![screenshot (17)](https://user-images.githubusercontent.com/95596561/173708082-f7b60457-89db-488f-afe1-92f6bf7c0fdb.png)
+
+
+> Introduccion a JDBC 
+
+Se nos mostrara la sentencia SQL que se va a ejecutar y luego hacer click en el boton **Apply**
+
+![screenshot (18)](https://user-images.githubusercontent.com/95596561/173708491-fa039311-b1be-44fb-a425-b738927a9f73.png)
+
+> Introduccion a JDBC
+
+Vamos a corroborar y luego hacer click en el boton **Finish**
+
+![screenshot (19)](https://user-images.githubusercontent.com/95596561/173708712-e59c9e85-4776-4a82-af6f-7bd9c29be4f6.png)
+
+> Introduccion a JDBC
+
+Aqui simplemente debemos cambiar en el ejemplo que teniamos la direccion de la BDD a la cual queremos acceder en este caso **auto_shop**:
+
+![screenshot (20)](https://user-images.githubusercontent.com/95596561/173709466-99193e59-326d-4b92-979c-9418f546b08e.png)
+
+Luego cambiamos el **PASO 4** y utilizaremos el metodo **excuteUpdate()** este nos es util cada vez que lo que vamos a realizar sobre la BDD ya nos es una consulta sino una actualizacion, en este caso vamos a **crear Tablas** e **Insertar valores** dentro de cada una.
+
+![screenshot (21)](https://user-images.githubusercontent.com/95596561/173709887-c3c56b89-5f4e-4e36-9dfa-bf3a0962ec84.png)
+
+> Introduccion a JDBC
+
+Creando la Tabla **Employes** e insertando Valores dentro.
+
+![screenshot (22)](https://user-images.githubusercontent.com/95596561/173710220-58bf844e-992c-4c61-924c-c7793bcad495.png)
+
+> Introduccion a JDBC
+
+Creando la Tabla **Customers** e insertando Valores dentro.
+
+![screenshot (23)](https://user-images.githubusercontent.com/95596561/173710438-925600a6-cb00-4c65-8dfb-962044eacbc7.png)
+
+> Introduccion a JDBC
+
+Creando la Tabla **Cars** e insertando Valores dentro.
+
+![screenshot (24)](https://user-images.githubusercontent.com/95596561/173710662-d0a9b6fa-98dd-40ef-bc68-ff39db7c6e6c.png)
+
+> Introduccion a JDBC
+
+Como obtener un DER a partir de una BDD en mySLQ Workbench:
+
+* https://www.javierrguez.com/generar-diagrama-entidad-relacion-mysql/
+
+Para nuestro caso: 
+
+![screenshot (25)](https://user-images.githubusercontent.com/95596561/173710947-cc33866a-75da-4d95-a8c5-f2d1bf44b119.png)
+
+> Introduccion a JDBC
+
+* Por ultimo a modo de **repaso** si quisieramos:
+    * **Actualizar** o insertar datos en la BDD lo hacemos como se muestra a continuacion:
+
+    ![screenshot (26)](https://user-images.githubusercontent.com/95596561/173711254-c25ec534-e934-461a-81b2-c0337d0fbb40.png)
+
+    * Cuando tengamos datos dentro de la tabla, podremos **Modificarlos** utilizando para ello una sentencia **UPDATE**:
+
+    ![screenshot (27)](https://user-images.githubusercontent.com/95596561/173711459-f8b2265b-10a1-40fa-a91e-b534b0ecf0d0.png)
+
+    * Si queremos **Eliminar** un registro de la tabla utilizaremos una sentecia **DELETE** como se muestra a continuacion:
+
+    ![screenshot (28)](https://user-images.githubusercontent.com/95596561/173711670-d0d451cc-0471-42c9-9ec5-5faf390e428b.png)
+
+
+# Gracias.
+
+
+
+
+
