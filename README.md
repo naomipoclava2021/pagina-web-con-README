@@ -1,87 +1,44 @@
 ## Java
 
-> Diagramas de Clases
+>## ¿ Que es un API?
 
-¿Que es un diagrama de clases?
-Clase 
-Asociaciones
-Multiplicidad
-Agregacion
-Composicion
-Generalizacion o Herencia
+Una **Api** (Application Programming Inferce - Intefaz de Programacion de Aplicacion) es un conjunto de funciones y procedimientos que cumplen una o muchas funciones con el fin de ser utilizadas por otro software.
 
-> ¿Que es un diagrama de clase?
-Los diagramas de clase decriben la estructura estatica de un sistema.
+**Permite establecer una relacion entre dos aplicaciones para el intercambio de mensaje o datos.**
 
+Esta transferencia de datos se lleva a cabo mediante el formato estandar, entre los cuales podemos destacar.
 
-Las cosas que existen y que nos rodean se agrupan naturalmente en categorias o grupos (**Clases**). Una Clase tiene **atributos** (caracteristicas) y/o **metodos** (comportamientos).
+* XML: eXtensible Markup Language.
+* JSON: JavaScrip Object Notation.
+* YAML: Yet Another Markup Language.
 
-Un rectangulo es el simbolo que representa a la clase, y se divide en tres areas. Un diagrama de clases esta formado por varios rectangulos de este tipo conectados por lineas que representan las **asociaciones o menera en que las clases se relacionan entre si**
+## Servicios Web
+Cuando hablamos de un Servicio Web hacemos referencia al entorno que permite la comunicacion entre aplicaciones cliente y servidor. Es decir, que son API's que permiten el intercambio de informacion entre un servicio a traves de Internet y una aplicacion.
 
-## Clase
-| Clase |
-|---|
-| atributo: tipo |
-| /atributo Derivado |
+Por ejemplo, si deseamos utilizar un servicio de geolocalizacion podemos recurrir al API's que permiten el intercambio de informacion entre un servicio a traves de internet y una aplicacion.
 
-Las clases se representan con rectangulos divididos en tres areas:
-* La superior contiene el nombre de la clase.
-* La central contiene los atributos.
-* La inferior los metodos.
+Por ejemplo, si deseamos utilizar un servicio de geolocalizacion podemos recurrir al API de Google Maps y emplear las funciones que esto nos provee.
 
-Podemos esquematizar la visibilidad de los **metodos** o **atributos** mediante los siguientes **modificadores de acceso**:
+Normalmente este intercambio se produce mediante peticiones HTTP o HTTPS.
 
-| Visibilidad | Public | Private | Protected |
-|---|---|---|---|
-| Desde la misma clase | ✔ | ✔ | ✔ |
-| Desde una subclase | ✔ | ❌ | ✔ |
-| Desde una otra clase (no subclase)| ✔ | ❌ | ❌ |
-Simbolo                 + - *
+Al momento de desarrollar una API podemos encontrar dos enfoques distintos para la transmision de datos en linea REST y SOAP.
 
-## Asociaciones
-Las **asociaciones** son las que presentan a las **relaciones estaticass** entre las clases.
+## SOAP
+SOAP (Simple Object Access Protocol - Protocol Simple Acceso a Objetos) es un protocolo estandar que posibilita la comunicacion entre las aplicaciones diseñadas en diferentes lenguajes y en distintas plataformas.
 
-El nombre de la asociacion va por sobre o por debajo la linea que la representa.
+Una API desarrollada mediante SOAP puede administrar el envio de solicitudes de datos (Request) a traves de los protocolos HTTP o HTTPS antes mencionados.
 
-Una flecha rellena indica la direccion de la relacion. Los roles se ubican cerca del final de una asociacion.
+Una vez que recibe una solicitud, los mensajes SOAP de retorno (Response) deben ser documentados XML, que es un lenguaje de marcado que comprenden las personas y las maquinas.
 
-Los roles representan la manera en que dos clases se ven entre ellas. No es comun el colocar ambos nombres, el de la asociacion y el de los roles a la vez.
+## REST
+REST (REpresentational State Transfer - Tranferencia de Representacion de Estado) es una tecnica de arquitectura de software, un conjunto de principios y patrones de comunicacion que nos permite estructurar las API's que deseamos desarrollar.
 
-Cuando una asociacion es calificada, el simbolo correspondiente se coloca al final de la asociacion, contra la clase que hace de calificador.
+Cuando realizamos una solicitud a nuestra API REST lo haremos del protocolo HTTPS pero a diferencia de SOAP, puede devolver mensajes en distintos formatos: HTML,XML, texto sin formato y JSON.
 
-## Multiplicadad
-| Multiplicidad|
-|---|
-| 1 no mas de uno |
-| 0...1 cero o uno |
-| * muchos |
-| 0...* cero o muchos |
-| 1...* uno o muchos |
+Dentro de estas solicitudes las operaciones mas importantes relacionadas con los datos en cualquier sistema REST y la especificacion HTTP son cuatro: POST (crear), GET (leer y consultar), PUT (modificar) y DELETE(borrar).
 
 
-Las notaciones utilizadas para señalar la multiplicidad se colocan cerca del final de una asociacion. Estos simbolos indican el numero de instancias de una clase vinculadas a una clase viculadas a una de las instancias de otra clase.
 
-## Ejemplo
-Una empresa puede tener uno mas empleados, pero cada empledo trabaja para una sola empresa solamente.
-
-## Agregacion
-La agregacion es una relacion en la que la Clase "**Todo**" juega un rol mas importante que la Clase "**Parte**", pero las dos clases no son dependientes una de otra.
-
-Se grafica con un rombo diamante vacio contraa la Clase "**Todo**".
-
-## Composicion
-Composicion es un tipo especial de agregacion que denota una fuerte posesion de la Clase "Todo", a la Clase "Parte".
-
-Se grafica con un rombo diamante relleno contra la clase que representa el todo.
-
-
-## Generalizacion o Herencia
-Generalizacion es otro nombre para herencia.
- 
-Se refiere a una relacion entre dos clases en donde una Clase "Especifica" es una version especializada de otra, o Clase "General".
-
-
-Gracias.
 
 
 
