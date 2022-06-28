@@ -1,46 +1,119 @@
 ## Java
 
->## ¿ Que es un API?
+¿ Que es Apache Maven?
 
-Una **Api** (Application Programming Inferce - Intefaz de Programacion de Aplicacion) es un conjunto de funciones y procedimientos que cumplen una o muchas funciones con el fin de ser utilizadas por otro software.
+Es una herramienta de gestion y construccion de proyectos de software con Java.
 
-**Permite establecer una relacion entre dos aplicaciones para el intercambio de mensaje o datos.**
+Algunas de las tareas que nos permite resolver son:
 
-Esta transferencia de datos se lleva a cabo mediante el formato estandar, entre los cuales podemos destacar.
+🔳 Identificar componentes
 
-* XML: eXtensible Markup Language.
-* JSON: JavaScrip Object Notation.
-* YAML: Yet Another Markup Language.
+🔳 **Resolver dependencias**
 
-## Servicios Web
-Cuando hablamos de un Servicio Web hacemos referencia al entorno que permite la comunicacion entre aplicaciones cliente y servidor. Es decir, que son API's que permiten el intercambio de informacion entre un servicio a traves de Internet y una aplicacion.
+🔳 Test
 
-Por ejemplo, si deseamos utilizar un servicio de geolocalizacion podemos recurrir al API's que permiten el intercambio de informacion entre un servicio a traves de internet y una aplicacion.
+🔳 Empaquetamiento
 
-Por ejemplo, si deseamos utilizar un servicio de geolocalizacion podemos recurrir al API de Google Maps y emplear las funciones que esto nos provee.
+🔳 ...
 
-Normalmente este intercambio se produce mediante peticiones HTTP o HTTPS.
+## POM
 
-Al momento de desarrollar una API podemos encontrar dos enfoques distintos para la transmision de datos en linea REST y SOAP.
+Marven se basa en un **Modelo de Objetos del Proyecto** (POM) para su configuracion.
 
-## SOAP
-SOAP (Simple Object Access Protocol - Protocol Simple Acceso a Objetos) es un protocolo estandar que posibilita la comunicacion entre las aplicaciones diseñadas en diferentes lenguajes y en distintas plataformas.
+Dicha configuracion debera describirse en un fichero pom.xml
 
-Una API desarrollada mediante SOAP puede administrar el envio de solicitudes de datos (Request) a traves de los protocolos HTTP o HTTPS antes mencionados.
+Siempre se situa en la raiz del proyecto.
 
-Una vez que recibe una solicitud, los mensajes SOAP de retorno (Response) deben ser documentados XML, que es un lenguaje de marcado que comprenden las personas y las maquinas.
+## Artifict (Artefeacto)
 
-## REST
-REST (REpresentational State Transfer - Tranferencia de Representacion de Estado) es una tecnica de arquitectura de software, un conjunto de principios y patrones de comunicacion que nos permite estructurar las API's que deseamos desarrollar.
+Es un componente de software, la unidad minima que desplegara todo repositorio Maven. Una compilacion de maven produce uno o mas artefactos (**JAR, WAR, POM).
 
-Cuando realizamos una solicitud a nuestra API REST lo haremos del protocolo HTTPS pero a diferencia de SOAP, puede devolver mensajes en distintos formatos: HTML,XML, texto sin formato y JSON.
+## Coordenadas
 
-Dentro de estas solicitudes las operaciones mas importantes relacionadas con los datos en cualquier sistema REST y la especificacion HTTP son cuatro: POST (crear), GET (leer y consultar), PUT (modificar) y DELETE(borrar).
+Sistema por el cual se determina de forma unica a cada uno de los artefactos en internet.
 
 
+🔳 **Group ID**: identificacion del grupo. Normalmente se utiliza el nombre del dominio al reves. Por ejemplo: **com.cinemar.mps**
+
+🔳 **Artifact ID**: Identificacion del artefacto. Por ejemplo: **supermak, cinemar**
+
+🔳 **Version 1.0.0-SNAPSHOP, 1.2.5-RC (Release Candidate), 1.3.3-Release**
 
 
+## Empaquetado
 
+Debemos especificar que tipo de componentes de software que desplegaremos.
+
+🔳 **JAR**: **Java ARchive** es un tipo de archivo que permite ejecutar aplicaciones y herramientas implementadas en el lenguaje de programacion JAVA.
+🔳 WAR, EAR, POM
+
+
+|clean| Elimina los ficheros generados en construcciones anteriores|
+|---|---|
+|validate| Valida el proyecto si es correcto|
+|compile| Genera los ficheros *.class compilando los fuentes *.java|
+|test| Ejecuta los test unitarios existentes|
+|package| Genera el empaquetado final (**jar, war, etc**)|
+|verify| Verificar que el paquete cumpla los criterios de calidad|
+|install| Instala un paquete en el equipo local|
+|deploy| Instala un paquete en el repositorio remoto|
+
+
+## Plugin
+
+Es una tarea especifica, mas pequeña que una fase de construccion, que contribuye a la **construccion** y gestion del proyecto.
+
+Permiten conectar con herramientas externas en este proceso de construccion.
+
+
+# Estructura del Proyecto
+|Estructura del Proyecto|
+|---|
+|Project|
+|src|
+|main|
+|java|
+|wwebapps|
+|resource|
+|test|
+|java|
+|resource|
+|target|
+|pom.xml|
+
+## POM.xml
+
+```xml
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+        <modelVersion>4.0.0</modelVersion>
+        
+        <parent...>
+
+        <groupId>com.cinemar</groupId>
+        <artifictId>Cinemar</artifictId>
+        <version>0.0.1-SNAPSHOP</version>
+        <packaging>jar<packaging>
+
+        <name>Cinemar</name>
+        <descripcion>TPFinal Java Mil Programadores Salteños</description>
+        <url>https://github.com/Luis-AP/${proyect.artifictId}</url>
+
+        <licenses...>
+
+        <developers...>
+
+        <properties...>
+
+        <dependencie...>
+
+        <build>
+            <plugins...>
+        </build>
+</project>
+
+```
 
 
 
